@@ -8,84 +8,10 @@ function md5(str) {
     return CryptoJS.MD5(str).toString();
 }
 
-const apiUrl = 'https://api.valantis.store:40000';
+const apiUrl = 'http://api.valantis.store:40000';
 const password = 'Valantis'; 
 
 const xAuthHeaderValue = generateXAuthHeaderValue(password);
-// async function getIds(pageNumber, limit) {
-//     const requestData = {
-//         action: 'get_ids',
-//         params: {
-//             offset: (pageNumber - 1) * 50,
-//             limit: limit
-//         }
-//     };
-
-//     return fetchData(requestData);
-// }
-
-// // Function to make API call to fetch items
-// async function getItems(arIds) {
-//     const requestData = {
-//         action: 'get_items',
-//         params: {
-//             "ids": arIds 
-//         }
-//     };
-
-//     return fetchData(requestData);
-// }
-
-// // Function to make API call to fetch fields
-// async function getFields(field, offset = 3, limit = 5) {
-//     const requestData = {
-//         action: 'get_fields',
-//         params: {
-//             field: field,
-//             offset: offset,
-//             limit: limit
-//         }
-//     };
-
-//     return fetchData(requestData);
-// }
-
-// // Function to make API call to filter items
-// async function filterItems(value, field) {
-//     const requestData = {
-//         action: 'filter',
-//         params: {
-//             [field]: field === 'price' ? Number(value) : value
-//         }
-//     };
-
-//     return fetchData(requestData);
-// }
-
-// // Function to handle generic API fetch request
-// async function fetchData(requestData) {
-//     try {
-//         const response = await fetch(apiUrl, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'X-Auth': xAuthHeaderValue
-//             },
-//             body: JSON.stringify(requestData)
-//         });
-
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! status: ${response.status}`);
-//         }
-
-//         const responseData = await response.json();
-//         return responseData.result;
-//     } catch (error) {
-//         console.error('Error fetching data:', error);
-//         throw error;
-//     }
-// }
-
    
 async function getIds(pageNumber,limit) {
     const requestData = {
