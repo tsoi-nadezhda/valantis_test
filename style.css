@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    border-width: 1px 1px 0;
+    background-color: #f7f7f7;
+  }
+  
+  .content {
+    margin: 20px;
+  }
+  
+  .pagination {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+    width: 742px;
+    overflow-x: scroll;
+    margin-left: 40px;
+    height: 50px;
+    padding: 20px;
+    flex-direction: row;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    outline: 1px solid #494a4f;
+    border-radius: 1px;
+    border: none;
+  }
+  
+  .hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
