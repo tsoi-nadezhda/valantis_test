@@ -125,6 +125,23 @@ async function filterItems (value, field){
     const responseData = await response.json();
     return responseData.result;
 }
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event.request))
+  })
+  
+  async function handleRequest(request) {
+    const url = new URL(request.url)
+    const apiUrl = 'https://api.valantis.store:40000' + url.pathname
+    const apiResponse = await fetch(apiUrl, {
+      method: request.method,
+      headers: request.headers,
+    })
+    return new Response(apiResponse.body, {
+      status: apiResponse.status,
+      statusText: apiResponse.statusText,
+      headers: apiResponse.headers
+    })
+  }
 
 document.addEventListener('DOMContentLoaded', async function () {
     let content = document.querySelector('.content');
